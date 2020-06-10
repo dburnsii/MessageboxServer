@@ -1,0 +1,6 @@
+<h1>Box#register</h1>
+<%= form_with(url: "/box/submit", method: "post") do %>
+  <%= label_tag(:activation_code, "6-Digit Code:") %>
+  <%= text_field_tag(:activation_code) %>
+  <%= submit_tag("Submit") %>
+<% end %>

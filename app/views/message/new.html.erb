@@ -1,0 +1,8 @@
+<h1>Message#new</h1>
+<%= form_with(url: "/message/create", method: "post") do %>
+  <%= label_tag(:recipient, "Recipient: ") %>
+  <%= text_field_tag(:recipient) %>
+  <%= label_tag(:message, "Message: ")%>
+  <%= text_field_tag(:message) %>
+  <%= submit_tag("Submit") %>
+<% end %>
