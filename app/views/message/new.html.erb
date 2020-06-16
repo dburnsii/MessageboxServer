@@ -1,8 +1,20 @@
-<h1>Message#new</h1>
-<%= form_with(url: "/message/create", method: "post") do %>
-  <%= label_tag(:recipient, "Recipient: ") %>
-  <%= text_field_tag(:recipient) %>
-  <%= label_tag(:message, "Message: ")%>
-  <%= text_field_tag(:message) %>
-  <%= submit_tag("Submit") %>
-<% end %>
+<div class="container-sm">
+  <div class="card shadow rounded">
+    <div class="card-body"> 
+      <h5 class="card-title">Send a Message</h5>
+      <div class="card-text">
+        <%= form_with(url: "/message/create", method: "post") do %>
+          <div class="form-group">
+            <%= label_tag(:recipient, "Recipient: ") %>
+            <%= text_field_tag(:recipient, nil, class: "form-text") %>
+          </div>
+          <div class="form-group">
+            <%= label_tag(:message, "Message: ")%>
+            <%= text_area_tag(:message, nil, class: "form-control message-text", wrap: "soft") %>
+          </div>
+          <%= submit_tag("Send", class: "btn btn-primary") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

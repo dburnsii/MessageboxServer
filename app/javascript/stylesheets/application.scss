@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/bootstrap";
+
+// Color Pallete:
+// https://coolors.co/a4243b-fce4d8-c47ac0-0f7173-1a090d
+
+$messagebox-red: #A4243B;
+$messagebox-pink-light: #FC3FD8;
+$messagebox-pink-dark: #C47AC0;
+$messagebox-blue: #0F7173;
+$messagebox-black: #1A090D;
+
+body {
+  background-color: $messagebox-red;
+}
+
+.message-text {
+  font-family: 'VT323', monospace;
+  background: $messagebox-black !important;
+  color: white !important;
+  width: 24em !important;
+  height: 10em !important;
+}
