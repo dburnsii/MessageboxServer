@@ -1,5 +1,8 @@
+require 'rmagick'
+require 'Base64'
+
 class MessageController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create] 
+  before_action :authenticate_user!, only: [:new, :create]
 
   def new
   end
@@ -35,8 +38,12 @@ class MessageController < ApplicationController
     messages =  Message.where recipient_id: box.user_id, received: false
     message = messages.order(:created_at).first
     if message
+      decoded = Base64.decode64(message.body[22..])
+      bitmap = Image.from_blob(decoded).first
+      bitmap.format = "BMP"
       response.set_header "sender", User.find(message.sender_id).email
-      render html: message.body
+      response.set_header "Content-Type", "image/bmp;base64"
+      send_data bitmap.to_blob, type: "image/bmp"
       message.update received: true
     else
       render html: "No Messages"

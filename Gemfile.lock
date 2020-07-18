@@ -163,6 +163,7 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rmagick (4.1.2)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -233,6 +234,7 @@ DEPENDENCIES
   listen (~> 3.2)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)
+  rmagick
   sass-rails (>= 6)
   selenium-webdriver
   spring
@@ -245,7 +247,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.7.1p83
 
 BUNDLED WITH
    2.1.4
