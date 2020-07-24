@@ -1,13 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  references: 
-  key: MyText
-  activation_code: MyString
-  references: 
+shrek:
+  id: 3
+  key: "779eb8e68d9d502863ad5b6c19f0d4606fedcc4e9d65a682d0af4763ecedde1a"
+  activation_code: "123456"
+  user_id: 1
 
-two:
-  references: 
-  key: MyText
-  activation_code: MyString
-  references: 
+fiona:
+  id: 4
+  key: "b7d1dbf88a91c3bdb0be724e35c0cd5157265e5c2b30113ada39663c9b27b9ee"
+  activation_code: "654321"
+  user_id: 2

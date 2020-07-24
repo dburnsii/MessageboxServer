@@ -1,5 +1,6 @@
 require 'rmagick'
-require 'Base64'
+require 'base64'
+include Magick
 
 class MessageController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
@@ -10,7 +11,7 @@ class MessageController < ApplicationController
   def create
 
     recp = User.find_by email: params[:recipient]
-    body = params[:message]
+    body = params[:message][:image]
     if recp
       message = Message.new
       message.body = body
@@ -25,6 +26,7 @@ class MessageController < ApplicationController
     box = Box.find_by key: params[:key]
     if !box
       puts "No box"
+      response.set_header "status", "No Box"
       render html: "No box"
       return
     end
@@ -38,14 +40,18 @@ class MessageController < ApplicationController
     messages =  Message.where recipient_id: box.user_id, received: false
     message = messages.order(:created_at).first
     if message
-      decoded = Base64.decode64(message.body[22..])
-      bitmap = Image.from_blob(decoded).first
-      bitmap.format = "BMP"
+      decoded = Base64.decode64(message.body)
+      puts message.body
+      #bitmap = Image.from_blob(decoded).first
+      #bitmap.format = "BMP"
       response.set_header "sender", User.find(message.sender_id).email
-      response.set_header "Content-Type", "image/bmp;base64"
-      send_data bitmap.to_blob, type: "image/bmp"
+      response.set_header "status", "New Message"
+      response.set_header "Content-Length", decoded.size
+      #send_data bitmap.to_blob, type: "image/bmp"
+      send_data decoded, type: "application/octet-stream"
       message.update received: true
     else
+      response.set_header "status", "No Messages"
       render html: "No Messages"
     end
   end

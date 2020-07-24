@@ -5,11 +5,15 @@
 # below each fixture, per the syntax in the comments below
 #
 shrek:
+  id: 1
   username: shrek
   email: shrek@swamp.com
+  password: password
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
 
 fiona:
+  id: 2
   username: fiona
   email: fiona@swamp.com
+  password: password
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
