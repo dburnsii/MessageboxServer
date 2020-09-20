@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
+require("image-js")
+//require("jquery-mobile")
 //require("image-pixels")
 
 

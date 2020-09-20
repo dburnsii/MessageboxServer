@@ -1,12 +1,16 @@
-var pixels = require('image-pixels')
-import ImageEditor from 'tui-image-editor'
-import 'tui-image-editor'
+var pixels = require('image-pixels');
+var ctx;
+var topOffset;
+var leftOffset;
+var last;
+//import ImageEditor from 'tui-image-editor'
+//import 'tui-image-editor'
 
 
 //var ImageEditor = require('tui-image-editor');
 //var FileSaver = require('file-saver'); //to download edited image to local. Use after npm install file-saver
 //var blackTheme = require('./js/theme/black-theme.js');
-var blackTheme = {
+/*var blackTheme = {
 
     // main icons
     'menu.normalIcon.color': '#8a8a8a',
@@ -56,7 +60,7 @@ var blackTheme = {
     // colorpicker style
     'colorpicker.button.border': '1px solid #1e1e1e',
     'colorpicker.title.color': '#fff'
-};
+};*/
 
 function bufferToBase64(buf){
   var data = Array.prototype.map.call(buf, function(char){
@@ -65,29 +69,55 @@ function bufferToBase64(buf){
   return btoa(data);
 }
 
-$(document).ready(() => {
-  var instance;
+function clearCanvas(){
+  // Make canvas black
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+}
 
-  instance = new ImageEditor('#tui-image-editor', {
-    includeUI: {
-      loadImage: {
-          path: 'images/blankMessage.bmp',
-          name: 'SampleImage'
-      },
-      theme: blackTheme, // or whiteTheme
-      menuBarPosition: 'bottom',
-  },
-      cssMaxWidth: 700,
-      cssMaxHeight: 500
+$(document).ready(() => {
+  var image = $("canvas#message_canvas");
+  ctx = image.get(0).getContext("2d");
+
+  // Resize canvas
+  ctx.canvas.width = image.parent().width();
+  ctx.canvas.height = ctx.canvas.width * 0.8;
+
+  clearCanvas();
+
+  // Set line strokes
+  ctx.strokeStyle = "white";
+  ctx.lineWidth = 3;
+
+  leftOffset = image.offset().left;
+  topOffset = image.offset().top;
+
+  image.on("touchstart", (e) => {
+    const t = e.targetTouches[0];
+    ctx.moveTo(t.pageX-leftOffset, t.pageY-topOffset);
+    e.preventDefault();
+  });
+
+  image.on("touchmove", (e) => {
+    const t = e.targetTouches[0];
+    ctx.lineTo(t.pageX-leftOffset, t.pageY-topOffset);
+    ctx.stroke();
+  });
+
+  image.on("touchend", (e) => {
   });
 
   $("form#create_message").submit((e) => {
     console.log(e);
     if(!e.isTrigger){
       e.preventDefault();
-      //console.log(instance);
-      var img = instance.toDataURL();
-      //console.log(pixels);
+      var resized_image = $("<canvas></canvas>");
+      var resized_ctx = resized_image.get(0).getContext("2d");
+      resized_image.get(0).width = 160;
+      resized_image.get(0).height = 128;
+      resized_ctx.drawImage(image.get(0), 0, 0, 160, 128);
+      var img = resized_image.get(0).toDataURL();
+      console.log(resized_image)
       convertImage(img);
     }
   });
@@ -112,7 +142,7 @@ $(document).ready(() => {
     console.log(converted);
     console.log(bufferToBase64(converted));
     document.getElementById('message_image').value = bufferToBase64(converted);
+    clearCanvas();
     $("form#create_message").submit();
-    //$("form#create_message").unbind("submit");
   }
 });

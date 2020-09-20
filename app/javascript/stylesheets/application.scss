@@ -13,10 +13,40 @@ body {
   background-color: $messagebox-red;
 }
 
+.page-header {
+  font-family: 'Press Start 2P', cursive;
+}
+
 .message-text {
   font-family: 'VT323', monospace;
   background: $messagebox-black !important;
   color: white !important;
   width: 24em !important;
   height: 10em !important;
+}
+
+#message_canvas {
+  border: 1px solid black;
+}
+
+#tui-image-editor {
+  min-height: 400px;
+}
+
+.tui-image-editor-header {
+  display: none;
+}
+
+.tui-image-editor-main {
+  top: 0;
+}
+
+.tui-image-editor-menu {
+  column-count: 6;
+  overflow-y: scroll;
+  white-space: normal !important;
+}
+
+.tui-image-editor-item {
+
 }
