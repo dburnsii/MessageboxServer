@@ -23,6 +23,4 @@ test:
 
 production:
   <<: *default
-  database: messagebox_production
-  username: messagebox
-  password: <%= ENV['MESSAGEBOX_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
