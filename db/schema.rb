@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2020_06_15_171058) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boxes", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.text "key"
     t.string "activation_code"
     t.datetime "created_at", precision: 6, null: false
@@ -24,8 +27,8 @@ ActiveRecord::Schema.define(version: 2020_06_15_171058) do
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.boolean "received", default: false
-    t.integer "recipient_id"
-    t.integer "sender_id"
+    t.bigint "recipient_id"
+    t.bigint "sender_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipient_id"], name: "index_messages_on_recipient_id"

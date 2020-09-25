@@ -12,6 +12,7 @@ default: &default
 
 development:
   <<: *default
+  username: postgres
   database: messagebox_development
 
 # Warning: The database defined as "test" will be erased and
@@ -19,6 +20,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  username: postgres
   database: messagebox_test
 
 production:
