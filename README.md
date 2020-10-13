@@ -62,17 +62,16 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`dburnsii`, `MessageboxServer`, `twitter_handle`, `email`
-
+This project serves as the web frontend for the MessageBox project. MessageBox allows you to easily 
+send messages to friends or loved ones with a simple and easy to use interface. The messages are 
+sent to the MessageBox hardware, and the user on the other end is notified of the new message. After
+opening the box and reading the message, the box clears it's screen and listens for more messages.
+This provides a clean interface to send personal messages to someone at work or home, without distracting
+the recipient or requiring them to use any complex technology.
 
 ### Built With
 
-* []()
-* []()
-* []()
-
+* [Rails 6](https://github.com/rails/rails)
 
 
 <!-- GETTING STARTED -->
@@ -82,10 +81,20 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+You'll need the following:
+* Ruby > 2.5
+* PostgreSQL
+* Node.js
+* Yarn
+
+* Ubuntu
 ```sh
-npm install npm@latest -g
+sudo apt install ruby postgresql node yarn
+```
+
+* Arch
+```sh
+sudo pacman -S ruby postgresql node yarn
 ```
 
 ### Installation
@@ -94,20 +103,29 @@ npm install npm@latest -g
 ```sh
 git clone https://github.com/dburnsii/MessageboxServer.git
 ```
-2. Install NPM packages
+2. Install Rails
 ```sh
-npm install
+gem install bundle
 ```
 
+3. Install dependencies
+```sh
+bundle install
+```
+
+4. Setup database
+```sh
+rails db:setup
+```
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+To run the project, run the rails server:
+```sh
+rails s
+```
 
 
 <!-- ROADMAP -->
@@ -135,25 +153,22 @@ Contributions are what make the open source community such an amazing place to b
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Desone Burns II - dburnsii@live.com
 
 Project Link: [https://github.com/dburnsii/MessageboxServer](https://github.com/dburnsii/MessageboxServer)
 
 
-
-<!-- ACKNOWLEDGEMENTS -->
+<!-- ACKNOWLEDGEMENTS
 ## Acknowledgements
 
 * []()
 * []()
 * []()
 
-
+-->
 
 
 
@@ -168,8 +183,6 @@ Project Link: [https://github.com/dburnsii/MessageboxServer](https://github.com/
 [issues-shield]: https://img.shields.io/github/issues/dburnsii/repo.svg?style=flat-square
 [issues-url]: https://github.com/dburnsii/repo/issues
 [license-shield]: https://img.shields.io/github/license/dburnsii/repo.svg?style=flat-square
-[license-url]: https://github.com/dburnsii/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/dburnsii
-[product-screenshot]: images/screenshot.png
+[license-url]: https://github.com/dburnsii/repo/blob/master/LICENSE
+[product-screenshot]: public/images/screenshot.png
 
