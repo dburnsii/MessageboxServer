@@ -11,7 +11,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -174,7 +173,7 @@ Project Link: [https://github.com/dburnsii/MessageboxServer](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/dburnsii/repo.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/dburnsii/MessageboxServer.svg?style=flat-square
 [contributors-url]: https://github.com/dburnsii/MessageboxServer/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/dburnsii/repo.svg?style=flat-square
 [forks-url]: https://github.com/dburnsii/MessageboxServer/network/members
