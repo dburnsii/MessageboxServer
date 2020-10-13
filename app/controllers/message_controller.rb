@@ -9,17 +9,15 @@ class MessageController < ApplicationController
   end
 
   def create
-
-    recp = User.find_by email: params[:recipient]
+    recp = User.find_by username: params[:recipient]
     body = params[:message][:image]
-    if recp
-      message = Message.new
-      message.body = body
-      message.recipient_id = recp.id
-      message.sender_id = current_user.id
-      message.save
-      puts "Sending message! :D"
-    end
+    message = Message.new
+    message.body = body
+    message.recipient = recp
+    message.sender = current_user
+    message.save
+    puts "Sending message! :D"
+    # TODO: Send a success message to the browser
   end
 
   def read

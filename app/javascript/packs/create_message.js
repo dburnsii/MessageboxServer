@@ -3,6 +3,7 @@ var ctx;
 var topOffset;
 var leftOffset;
 var last;
+var mouseDown = false;
 //import ImageEditor from 'tui-image-editor'
 //import 'tui-image-editor'
 
@@ -92,6 +93,7 @@ $(document).ready(() => {
   leftOffset = image.offset().left;
   topOffset = image.offset().top;
 
+  // Touch Listeners
   image.on("touchstart", (e) => {
     const t = e.targetTouches[0];
     ctx.moveTo(t.pageX-leftOffset, t.pageY-topOffset);
@@ -105,6 +107,28 @@ $(document).ready(() => {
   });
 
   image.on("touchend", (e) => {
+
+  });
+
+  //Mouse Listeners
+  image.on("mousedown", (e) => {
+    //const t = e.targetTouches[0];
+    mouseDown = true;
+    ctx.moveTo(e.pageX-leftOffset, e.pageY-topOffset);
+    e.preventDefault();
+  });
+
+  image.on("mousemove", (e) => {
+    //console.log(e.pageX);
+    //const t = e.targetTouches[0];
+    if(mouseDown) {
+      ctx.lineTo(e.pageX-leftOffset, e.pageY-topOffset);
+      ctx.stroke();
+    }
+  });
+
+  image.on("mouseup", (e) => {
+    mouseDown = false;
   });
 
   $("form#create_message").submit((e) => {

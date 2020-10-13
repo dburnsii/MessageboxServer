@@ -11,7 +11,7 @@
         <%= form_with(id: "create_message", url: "/message/create", method: "post") do %>
           <div class="form-group">
             <%= label_tag(:recipient, "Recipient: ") %>
-            <%= text_field_tag(:recipient, nil, class: "form-text") %>
+            <%= text_field_tag(:recipient, nil, class: "form-text", required: true) %>
           </div>
             <%= hidden_field(:message, :image) %>
           </div>
