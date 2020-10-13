@@ -175,14 +175,14 @@ Project Link: [https://github.com/dburnsii/MessageboxServer](https://github.com/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/dburnsii/repo.svg?style=flat-square
-[contributors-url]: https://github.com/dburnsii/repo/graphs/contributors
+[contributors-url]: https://github.com/dburnsii/MessageboxServer/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/dburnsii/repo.svg?style=flat-square
-[forks-url]: https://github.com/dburnsii/repo/network/members
+[forks-url]: https://github.com/dburnsii/MessageboxServer/network/members
 [stars-shield]: https://img.shields.io/github/stars/dburnsii/repo.svg?style=flat-square
-[stars-url]: https://github.com/dburnsii/repo/stargazers
+[stars-url]: https://github.com/dburnsii/MessageboxServer/stargazers
 [issues-shield]: https://img.shields.io/github/issues/dburnsii/repo.svg?style=flat-square
-[issues-url]: https://github.com/dburnsii/repo/issues
+[issues-url]: https://github.com/dburnsii/MessageboxServer/issues
 [license-shield]: https://img.shields.io/github/license/dburnsii/repo.svg?style=flat-square
-[license-url]: https://github.com/dburnsii/repo/blob/master/LICENSE
+[license-url]: https://github.com/dburnsii/MessageboxServer/blob/master/LICENSE
 [product-screenshot]: public/images/screenshot.png
 
