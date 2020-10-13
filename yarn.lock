@@ -4460,14 +4460,7 @@ jpeg-js@^0.4.1:
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.4.2.tgz#8b345b1ae4abde64c2da2fe67ea216a114ac279d"
   integrity sha512-+az2gi/hvex7eLTMTlbRLOhH6P6WFdk2ITI8HJsaH2VqYO0I594zXSYEP+tf4FW+8Cy68ScDXoAsQdyQanv3sw==
 
-jquery-mobile@^1.5.0-alpha.1:
-  version "1.5.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/jquery-mobile/-/jquery-mobile-1.5.0-alpha.1.tgz#2a8410d57f3bdeb7b969de2f4da9dc3906f9919e"
-  integrity sha1-KoQQ1X873re5ad4vTancOQb5kZ4=
-  dependencies:
-    jquery ">=1.8.3"
-
-jquery@>=1.8.3, jquery@^3.5.1:
+jquery@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
   integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==

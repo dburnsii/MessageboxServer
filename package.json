@@ -10,7 +10,6 @@
     "image-js": "^0.28.0",
     "image-pixels": "^2.2.2",
     "jquery": "^3.5.1",
-    "jquery-mobile": "^1.5.0-alpha.1",
     "popper.js": "^1.16.1",
     "tui-color-picker": "^2.2.6",
     "tui-image-editor": "^3.9.0",
