@@ -59,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://messagebox.unitfi.com)
 
 This project serves as the web frontend for the MessageBox project. MessageBox allows you to easily 
 send messages to friends or loved ones with a simple and easy to use interface. The messages are 
@@ -175,13 +175,13 @@ Project Link: [https://github.com/dburnsii/MessageboxServer](https://github.com/
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/dburnsii/MessageboxServer.svg?style=flat-square
 [contributors-url]: https://github.com/dburnsii/MessageboxServer/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/dburnsii/repo.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/dburnsii/MessageboxServer.svg?style=flat-square
 [forks-url]: https://github.com/dburnsii/MessageboxServer/network/members
-[stars-shield]: https://img.shields.io/github/stars/dburnsii/repo.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/dburnsii/MessageboxServer.svg?style=flat-square
 [stars-url]: https://github.com/dburnsii/MessageboxServer/stargazers
-[issues-shield]: https://img.shields.io/github/issues/dburnsii/repo.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/dburnsii/MessageboxServer.svg?style=flat-square
 [issues-url]: https://github.com/dburnsii/MessageboxServer/issues
-[license-shield]: https://img.shields.io/github/license/dburnsii/repo.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/dburnsii/MessageboxServer.svg?style=flat-square
 [license-url]: https://github.com/dburnsii/MessageboxServer/blob/master/LICENSE
 [product-screenshot]: public/images/screenshot.png
 
