@@ -1,0 +1,12 @@
+<%= render "shared/card_header", title: "Create Firmware" %>
+  <%= form_with model: @firmware do |form| %>
+    <div class="form-group">
+      <%= form.label(:version, "Version: ") %>
+      <%= form.text_field(:version) %>
+      <%= form.label(:file, "File: ") %>
+      <%= form.file_field(:file) %>
+      <br/><br/>
+      <%= form.submit("Create", class: "btn btn-primary") %>
+    </div>
+  <% end %>
+<%= render "shared/card_footer" %>
